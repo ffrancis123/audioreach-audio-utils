@@ -106,7 +106,7 @@ jobs:
         with:
           fetch-depth: 0
           repository: Audioreach/meta-ar
-          
+          token: ${{ secrets.QTI_FF }}
       - name: Print trigger
         run: |
           echo "Triggered by ${{ github.event_name }}"
@@ -133,6 +133,7 @@ jobs:
         with:
           fetch-depth: 0
           repository: Audioreach/meta-ar
+          token: ${{ secrets.QTI_FF }}
 
       - name: "Update test definition ${{ matrix.target }}"
         run: |
