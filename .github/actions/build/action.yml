@@ -16,15 +16,6 @@ runs:
       run: |
         # Load the build arguments
         set +x
-        # Build inside a docker container
-        source ./install/environment-setup-armv8-2a-poky-linux
-        cd audio-route
-        autoreconf -Wcross --verbose --install --force --exclude=autopoint
-        autoconf --force
-
-        ./configure ${{ env.BUILD_ARGS }}
-        # make
-        make DESTDIR=${{ github.workspace }}/build install
 
         # Build inside a docker container
         docker run \
